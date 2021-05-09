@@ -10,31 +10,31 @@ SetWorkingDir %A_ScriptDir%
  
 Gui, Font, cAqua
 Gui, Font, s10
-Gui, Add, Text, x30 y10, Apex No Recoil By Rismose v1
-Gui, Add, Text, x30 y+5, Mouse Sense: 2.8
-Gui, Font, s12
-Gui, Add, Text, x30 y+15, Setting :
+Gui, Add, Text, x30 y10, Apex No Recoil By Rismose [v1.1]
+Gui, Add, Text, x30 y+5, Default Mouse Sense: 2.8
 Gui, Font, s10
-Gui, Add, Text, x30 y+5, "F1" R-301
-Gui, Add, Text, x30 y+5, "F2" R99
-Gui, Add, Text, x30 y+5, "F3" Alternator
-Gui, Add, Text, x30 y+5, "F4" RE-45
-Gui, Add, Text, x30 y+5, "F5" Havoc
-Gui, Add, Text, x30 y+5, "F6" Prowler+Select
-Gui, Add, Text, x30 y+5, "F7" Volt
-Gui, Add, Text, x30 y+5, "F8" Flatline
-Gui, Add, Text, x30 y+5, "F9" Spitfire
-Gui, Add, Text, x30 y+5, "F10" LSTAR
-Gui, Add, Text, x30 y+5,  "F11" Devotion
-Gui, Add, Text, x30 y+5,  "F12" Devotion+Select
-Gui, Add, Text, x30 y+5,  "Numpad1" Havoc+Select
-Gui, Add, Text, x30 y+5,  "Numpad2" Hemlok
-Gui, Add, Text, x30 y+5,  "Numpad3" Scout/p2020/wigman
-Gui, Add, Text, x30 y+5, "4" Reset Script
+Gui, Add, Text, x30 y+15, Setting:
+Gui, Font, s10
+Gui, Add, Text, cRed x30 y+5, 'F1' R-301 (OLD)
+Gui, Add, Text, cLime x30 y+5, 'F2' R99 (NEW)
+Gui, Add, Text, cRed x30 y+5, 'F3' Alternator (OLD)
+Gui, Add, Text, cRed x30 y+5, 'F4' RE-45 (OLD)
+Gui, Add, Text, cRed x30 y+5, 'F5' Havoc (OLD)
+Gui, Add, Text, cRed x30 y+5, 'F6' Prowler+Select (OLD)
+Gui, Add, Text, cRed x30 y+5, 'F7' Volt (OLD)
+Gui, Add, Text, cRed x30 y+5, 'F8' Flatline (OLD)
+Gui, Add, Text, cRed x30 y+5, 'F9' Spitfire (OLD)
+Gui, Add, Text, cRed x30 y+5, 'F10' LSTAR (OLD)
+Gui, Add, Text, cRed x30 y+5,  'F11' Devotion (OLD)
+Gui, Add, Text, cRed x30 y+5,  'F12' Devotion+Select (OLD)
+Gui, Add, Text, cRed x30 y+5,  'Numpad1' Havoc+Select (OLD)
+Gui, Add, Text, cRed x30 y+5,  'Numpad2' Hemlok (OLD)
+Gui, Add, Text, cRed x30 y+5,  'Numpad3' Scout/p2020/wigman (OLD)
+Gui, Add, Text, cRed x30 y+5, '4' Reset Script
  
 Gui, -AlwaysOnTop
 Gui, Color, Black
-Gui, Show, w350 h450, No Recoil Script
+Gui, Show, w350 h450, Apex No Recoil by Rismose [1.1]
  
 SetBatchLines -1                        ;removes default 10ms delay between lines 
 #MaxHotkeysPerInterval 99000000
@@ -50,11 +50,8 @@ SetWinDelay, -1
 ;   ExitApp
 ;}
  
-;-----editplz-----
+;-----user settings-----
 sens:=2.8
-bind_bhop=mbutton ;This button should be binded sub-crouch[hold] key in Game setting
-subjumpkey=9 ;This button should be binded sub-Jump key in Game setting
-subshootkey=0 ;This button should be binded sub-Attack key in Game setting
  
 bind_1=1
 bind_2=2
@@ -97,7 +94,6 @@ Hotkey, ~$*%bind_hemlok%, hemlok
 Hotkey, ~$*%bind_scout%, scout
 Hotkey, ~$*%bind_reset%, key_reset
 Hotkey, ~$*%bind_granade%, key_granade
-Hotkey, ~$*%bind_bhop%, key_bhop
 ; ~~~~~~~~~~~~~~~~~Pattern~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 no_pattern := {}
 r301_pattern := {1: "-3.5,10.4,80", 2: "4.4,10.6,80", 3: "-6.4,9.5,80"
@@ -111,16 +107,16 @@ r301_pattern := {1: "-3.5,10.4,80", 2: "4.4,10.6,80", 3: "-6.4,9.5,80"
 ,25: "-3.0,0.0,80", 26: "0.0,0.0,80", 27: "0.0,0.0,80"
 ,28: "0.0,0.0,80", 29: "0.0,0.0,80", 30: "0.0,0.0,80"}
 			  
-r99_pattern := {1: "-1.6,6,53", 2: "0.1,6,53", 3: "2.3,4.9,53"
-,4: "-1.8,9.2,53", 5: "-3.3,13.9,53", 6: "-6.3,12,53"
-,7: "-5.5,8.7,53", 8: "-2.5,7.8,53", 9: "0.2,8,52"
-,10: "2.3,6.8,52", 11: "4.5,6.3,52", 12: "0.9,5.1,52"
-,13: "1.6,7.5,52", 14: "-1.1,3,52", 15: "-4.9,0,52"
-,16: "-2.3,1.8,52", 17: "-4.5,0.5,52", 18: "4,1.3,52"
-,19: "0,1,52", 20: "2.5,0.7,52", 21: "3.5,0.7,52"
-,22: "4,2.6,52", 23: "3.5,2,52", 24: "4.6,2,52"
-,25: "2,1.5,52", 26: "2,2,52", 27: "-5,3,52"
-,28: "-5,0,52", 29: "-5,1,52", 30: "0,0,52"}
+r99_pattern := {1: "0,5,53", 2: "0,5,53", 3: "0,0,53"
+,4: "0,5,53", 5: "0,10,53", 6: "0,10,53"
+,7: "0,10,53", 8: "0,10,53", 9: "0,10,52"
+,10: "0,10,52", 11: "0,10,52", 12: "0,10,52"
+,13: "0,10,52", 14: "0,10,52", 15: "0,10,52"
+,16: "0,10,52", 17: "0,10,52", 18: "0,10,52"
+,19: "0,5,52", 20: "0,5,52", 21: "0,5,52"
+,22: "0,5,52", 23: "0,5,52", 24: "0,5,52"
+,25: "0,5,52", 26: "0,5,52", 27: "0,5,52"
+,28: "0,5,52", 29: "0,5,52", 30: "0,5,52"}
  
 alternator_pattern := {1: "0.0,14.4,109", 2: "0.0,13.0,109", 3: "0.0,15.8,109"
 ,4: "0.0,13.9,109", 5: "0.0,15.6,109", 6: "0.0,15.6,109"
@@ -405,17 +401,6 @@ SAPI.Speak(nullA)
 return
  
 ; ~~~~~~~~~~~~~~~~~~~~~~Main~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-key_bhop:
-sleep 150
-while GetKeyState(bind_bhop, "P")
-{
-Random, foo, 50, 100
-Send % subjumpkey
-Sleep %foo%
-send {space}
-sleep %foo%
-}
-return
  
 #IF mice=0 ; Disable switch cursor shown (start line)
 ~$*LButton::
